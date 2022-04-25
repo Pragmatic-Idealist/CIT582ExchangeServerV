@@ -12,6 +12,7 @@ from datetime import datetime
 import math
 import sys
 import traceback
+import Web3
 
 # TODO: make sure you implement connect_to_algo, send_tokens_algo, and send_tokens_eth
 from send_tokens import connect_to_algo, connect_to_eth, send_tokens_algo, send_tokens_eth
@@ -109,7 +110,8 @@ def get_algo_keys():
 
 def get_eth_keys(filename = "eth_mnemonic.txt"):
     w3 = Web3()
-    
+    w3.eth.account.enable_unaudited_hdwallet_features()
+
     # TODO: Generate or read (using the mnemonic secret) 
     # the ethereum public/private keys
 
