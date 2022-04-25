@@ -12,7 +12,7 @@ from datetime import datetime
 import math
 import sys
 import traceback
-import web3
+from web3 import Web3
 
 # TODO: make sure you implement connect_to_algo, send_tokens_algo, and send_tokens_eth
 from send_tokens import connect_to_algo, connect_to_eth, send_tokens_algo, send_tokens_eth
