@@ -133,7 +133,7 @@ def send_tokens_eth(w3,sender_sk,txes):
         gas_price = w3.eth.gas_price
         gas = w3.eth.estimate_gas({'form': sender_pk, 'to': receiver_pk, 'data' : b'', 'amount': amount})
 
-        transaction_dict = {'nounce': new_nounce, 'gasPrice' = gas_price, 
+        transaction_dict = {'nounce': new_nounce, 'gasPrice' : gas_price, 
         'gas' = gas, 'to': receiver_pk, 'value': tx_amount, 'data':b''}
 
         signed_transaction = w3.eth.account.signed_transaction(transaction_dict, sender_sk)
