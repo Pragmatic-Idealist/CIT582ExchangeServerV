@@ -296,6 +296,7 @@ def trade():
                 signature = content['sig'] )
 
                 fill_order(order_obj) # filling order
+                execute_txes(txes)
 
                 g.session.add(order_obj)
                 g.session.commit()
@@ -318,6 +319,7 @@ def trade():
                 signature = content['sig'] )
 
                 fill_order(order_obj) # filling order
+                execute_txes(txes)
 
                 g.session.add(order_obj)
                 g.session.commit()
