@@ -111,7 +111,7 @@ def get_eth_keys(filename = "eth_mnemonic.txt"):
     w3.eth.account.enable_unaudited_hdwallet_features()
     eth_pk,eth_sk = w3.eth.account.create_with_mnemonic()
 
-    return eth_sk, eth_pk
+    return eth_pk, eth_sk
   
 def fill_order(order, txes=[]):
     # TODO: 
