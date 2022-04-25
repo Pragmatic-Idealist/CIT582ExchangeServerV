@@ -108,14 +108,13 @@ def get_eth_keys(filename = "eth_mnemonic.txt"):
     # TODO: Generate or read (using the mnemonic secret) 
     # the ethereum public/private keys
     with open(filename,'r') as f:
-        mnemonic_secret = f.read().strip()
+        mnemonic = f.read().strip()
 
-    eth_account.Account.enable_unaudited_hdwallet_features()
-    account = eth_account.Account.from_mnemonic(mnemonic_secret)
+
+    w3.eth.account.enable_unaudited_hdwallet_features()
+    acct,mnemonic_secret = w3.eth.account.create_with_mnemonic(mnemonic)
     
-    eth_pk = account.address 
-    eth_sk = account.keys
-    return eth_sk, eth_pk
+    return mnemonic_secret, acct
   
 def fill_order(order, txes=[]):
     # TODO: 
