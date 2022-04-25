@@ -103,8 +103,6 @@ def get_algo_keys():
 
     algo_sk = account_private_key
     algo_pk = account_public_key
-
-    algo_sk, algo_pk = account.generate_account()
     
     return algo_sk, algo_pk
 
@@ -115,11 +113,11 @@ def get_eth_keys(filename = "eth_mnemonic.txt"):
     # TODO: Generate or read (using the mnemonic secret) 
     # the ethereum public/private keys
 
-    mnemonic = "coral allow abandon recipe top tray caught video climb similar prepare bracket" 
+    eth_account.Account.enable_unaudited_hdwallet_features()
+
+    mnemonic = "coral allow abandon recipe top tray caught video climb similar prepare bracket " 
     # example in documentation
 
-
-    eth_account.Account.enable_unaudited_hdwallet_features()
     acct = eth_account.Account.from_mnemonic(mnemonic)
     eth_pk = acct.address 
     eth_sk = acct.key
