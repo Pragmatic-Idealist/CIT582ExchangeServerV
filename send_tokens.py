@@ -17,7 +17,7 @@ def connect_to_algo(connection_type=''):
         # TODO: return an instance of the client for sending transactions
         # Tutorial Link: https://developer.algorand.org/tutorials/creating-python-transaction-purestake-api/
         algod_address = "https://testnet-algorand.api.purestake.io/ps2"
-        token = = {'X-Api-key': algod_token}
+        token = {'X-Api-key': algod_token}
         client_type = algod.AlgodClient(algod_token, algod_address, headers=token)
 
     return client_type
