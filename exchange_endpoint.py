@@ -115,10 +115,10 @@ def get_eth_keys(filename = "eth_mnemonic.txt"):
     # TODO: Generate or read (using the mnemonic secret) 
     # the ethereum public/private keys
 
-    mnemonic = 'indoor dish desk flag debris potato excuse depart ticket judge file exit'
+    mnemonic_secret = 'indoor dish desk flag debris potato excuse depart ticket judge file exit'
     # example in documentation
 
-    acct = w3.eth_account.Account.from_mnemonic(mnemonic)
+    acct = w3.eth.account.from_mnemonic(mnemonic_secret)
     eth_pk = acct.address 
     eth_sk = acct.key
     return eth_sk, eth_pk
