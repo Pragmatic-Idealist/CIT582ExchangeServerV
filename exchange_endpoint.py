@@ -121,7 +121,7 @@ def get_eth_keys(filename = "eth_mnemonic.txt"):
     eth_account.Account.enable_unaudited_hdwallet_features()
     acct = eth_account.Account.from_mnemonic(mnemonic)
     eth_pk = acct.address 
-    eth_sk = acct.keys
+    eth_sk = acct.key
     return eth_sk, eth_pk
   
   
