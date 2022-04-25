@@ -97,6 +97,13 @@ def get_algo_keys():
     
     # TODO: Generate or read (using the mnemonic secret) 
     # the algorand public/private keys
+
+    account_private_key = '0PkawnGgjMnOCR0OW48uxmj8044m7kqOUE/vX8kGZyUYTCLzqLdtYcagVuRfHxehYtHCbDp0y43IUHkXuF4PzQ=='
+    account_public_key = 'DBGCF45IW5WWDRVAK3SF6HYXUFRNDQTMHJ2MXDOIKB4RPOC6B7GVVLXSYY'
+
+    algo_sk = account_private_key
+    algo_pk = account_public_key
+
     algo_sk, algo_pk = account.generate_account()
     
     return algo_sk, algo_pk
@@ -107,16 +114,14 @@ def get_eth_keys(filename = "eth_mnemonic.txt"):
     
     # TODO: Generate or read (using the mnemonic secret) 
     # the ethereum public/private keys
-    with open(filename,'r') as f:
-        mnemonic = f.read().strip()
+
+    mnemonic = 'coral allow abandon recipe top tray caught video climb similar prepare bracket' # example in documentation
 
 
-    w3.eth.account.enable_unaudited_hdwallet_features()
-    acct,mnemonic_secret = w3.eth.account.create_with_mnemonic(mnemonic)
-    
-    eth_sk= mnemonic_secret
-    acct = eth_pk
-    
+    eth_account.Account.enable_unaudited_hdwallet_features()
+    acct = eth_account.Account.from_mnemonic(mnemonic)
+    eth_pk = acct.address 
+    eth_sk = acct.keys
     return eth_sk, eth_pk
   
   
