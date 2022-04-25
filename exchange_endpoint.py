@@ -115,7 +115,8 @@ def get_eth_keys(filename = "eth_mnemonic.txt"):
     # TODO: Generate or read (using the mnemonic secret) 
     # the ethereum public/private keys
 
-    mnemonic = 'coral allow abandon recipe top tray caught video climb similar prepare bracket' # example in documentation
+    mnemonic = "coral allow abandon recipe top tray caught video climb similar prepare bracket" 
+    # example in documentation
 
 
     eth_account.Account.enable_unaudited_hdwallet_features()
