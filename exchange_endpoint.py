@@ -329,6 +329,7 @@ def trade():
                 g.session.commit()
                 return jsonify(False)
     else:
+      execute_txes(txes)
       return jsonify(True)
 
 @app.route('/order_book')
